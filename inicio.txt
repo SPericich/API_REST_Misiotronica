@@ -1,0 +1,27 @@
+    <h1>Bienvenido a la API de Misiotrónica</h1>
+<p>Los comandos disponibles son:</p>
+<ul>
+    <li>GET: /usuarios</li>
+    <li>GET: /usuarios/id</li>
+    <li>GET: /roles/usuarios/rolcod</li>
+    <li>GET: /perfil/usuarios</li>
+    <li>POST: /registro/cliente</li>
+    <li>POST: /registro/administrador</li>
+    <li>POST: /registro/proveedor</li>
+    <li>PATCH: /cuenta/usuarios</li>
+    <li>PATCH: /perfil/cliente</li>
+    <li>PATCH: /perfil/proveedor</li>
+    <li>PATCH: /perfil/administrador</li>
+    <li>PATCH: /estado/usuarios/id</li>
+    <li>GET: /productos</li>
+    <li>GET: /productos/id</li>
+    <li>POST: /proveedor/productos</li>
+    <li>PATCH: /datos/productos/id</li>
+    <li>PATCH: /estado/productos/id</li>
+    <li>POST: /cliente/venta</li>
+    <li>GET: /cliente/carrito</li> 
+    <li>PATCH: /cliente/carrito/modificarventa</li> 
+    <li>DELETE: /cliente/carrito/eliminarcarrito</li>
+    <li>GET: /cliente/miscompras</li>
+</ul>
+

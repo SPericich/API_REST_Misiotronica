@@ -1,0 +1,417 @@
+###Pido token de un admin
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "escuerzo45",
+    "contraseña": "ELveneno35miPASION"
+}
+
+###Pido token de un cliente
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "elsitadescalza",
+    "contraseña": "cenicienta35467"
+}
+
+###Pido token de un proveedor
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "cablepelado7",
+    "contraseña": "CintaAisladoraJAMAS59"
+}
+
+
+###Pido token de un superadmin 
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "precursoradelpunk",
+    "contraseña": "5iNOteGUSTAl4p0desCAMBIAR"
+}
+
+
+###AGREGAR ROLES (nivel 4) - se plantea como posibilidad, ya que implicaría la creación de nuevos modelos y endpoints
+POST http://localhost:1234/roles
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE3LCJ1c2VyIjoiZXNjdWVyem80NSIsInJvbCI6MSwiZXhwIjoxNjk4ODA5NzQwMTAyLCJpYXQiOjE2OTg4MDYxNDB9.0LXUtiNBmDLFaOP9TR4MP5CI9yLWnqxPB7y2oZ9vybA
+
+{
+    "cod_rol": 5,
+    "descripcion": "Moderador"
+}
+
+
+###AGREGAR ESTADOS (nivel 4) - se plantea como posibilidad
+POST http://localhost:1234/estados
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE3LCJ1c2VyIjoiZXNjdWVyem80NSIsInJvbCI6MSwiZXhwIjoxNjk4ODA5NzQwMTAyLCJpYXQiOjE2OTg4MDYxNDB9.0LXUtiNBmDLFaOP9TR4MP5CI9yLWnqxPB7y2oZ9vybA
+
+{
+    "cod_estado": 3,
+    "descripcion": "Enviado"
+}
+
+
+###
+###
+###
+
+###USUARIOS
+
+###LISTADO SIMPLE DE USUARIOS (nivel 1 o 4)
+GET http://localhost:1234/usuarios
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE3LCJ1c2VyIjoiZXNjdWVyem80NSIsInJvbCI6MSwiZXhwIjoxNjk4OTUzMzEzODQyLCJpYXQiOjE2OTg5NDk3MTN9.0XLd4-5ducczP52M4WqBW3Z_kH2NChFuRSN0aqH97bc
+
+
+###LISTADO DE USUARIOS SEGUN ROL (nivel 1 o 4)
+GET http://localhost:1234/roles/usuarios/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE2LCJ1c2VyIjoicHJlY3Vyc29yYWRlbHB1bmsiLCJyb2wiOjQsImV4cCI6MTY5ODk1ODAwMzkwMCwiaWF0IjoxNjk4OTU0NDAzfQ.DlqUZQAkQ6YgCHfltvxrbdIBRNK-XBfpbKkH-hSA2AA
+
+###BUSCAR USUARIO POR ID (nivel 1, 3 o 4)
+GET http://localhost:1234/usuarios/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE3LCJ1c2VyIjoiZXNjdWVyem80NSIsInJvbCI6MSwiZXhwIjoxNjk4OTYyNDIwOTU4LCJpYXQiOjE2OTg5NTg4MjB9.zef5KtuDTgzoM2MPoItYUHLLXn0INlkkCr_CY2iY0KE
+
+
+### Pido token de un usuario (cualquier nivel)
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "electrocutado45",
+    "contraseña": "3500WATSmamacita"
+}
+
+###VER PERFIL PROPIO
+GET http://localhost:1234/perfil/usuarios
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEzLCJ1c2VyIjoiZWxzaXRhZGVzY2FsemEiLCJyb2wiOjIsImV4cCI6MTY5ODk2MjEwNjQ3OSwiaWF0IjoxNjk4OTU4NTA2fQ.18VPIO8MMc6bF4MIacp1XQozJEYkqib6brQxxpCBorQ
+
+
+###AGREGAR USUARIO/CLIENTE - lista para ejecutar
+POST http://localhost:1234/registro/cliente
+Content-Type: application/json
+
+{
+    "email": "silvitamilanesa@hotmail.com",
+    "usuario": "milanesacosmica",
+    "contraseña": "reinaDElaNOCHEyLAcerveza2020",
+    "dni": 31090996,
+    "apellidos": "Milano",
+    "nombres": "Silvia",
+    "telefono": 2475821742,
+    "calle": "Juan Grigera",
+    "numero": 2154,
+    "localidadId": 15,
+    "comentarios": "Solo por la mañana"
+}
+
+###AGREGAR USUARIO/CLIENTE - lista para ejecutar
+POST http://localhost:1234/registro/cliente
+Content-Type: application/json
+
+{
+    "email": "donjuan2023@gmail.com",
+    "usuario": "donjuan2023",
+    "contraseña": "soyHERMOSSSO1111",
+    "dni": 17008005,
+    "apellidos": "Hernández",
+    "nombres": "Sergio",
+    "telefono": 2322215241,
+    "calle": "Paso",
+    "numero": 535,
+    "localidadId": 20
+}
+
+###Pido token de un superadmin 
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "precursoradelpunk",
+    "contraseña": "5iNOteGUSTAl4p0desCAMBIAR"
+}
+
+###AGREGAR USUARIO/ADMINISTRADOR (nivel 4) - lista para ejecutar
+POST http://localhost:1234/registro/administrador
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE2LCJ1c2VyIjoicHJlY3Vyc29yYWRlbHB1bmsiLCJyb2wiOjQsImV4cCI6MTY5ODk0NTk4MDQ5OCwiaWF0IjoxNjk4OTQyMzgwfQ.5wZrjGsxaXptcO23moByJTsr1S8FdOufWXX-UxtIO1k
+
+{
+    "email": "mirtaforever@yahoo.com",
+    "usuario": "lachiqui",
+    "contraseña": "LA3d4dESloD3menos",
+    "cuil": 2635265124
+}
+
+
+###AGREGAR USUARIO/PROVEEDOR (nivel 1 o 4) - lista para ejecutar
+POST http://localhost:1234/registro/proveedor
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE3LCJ1c2VyIjoiZXNjdWVyem80NSIsInJvbCI6MSwiZXhwIjoxNjk4OTQ2MDc0NzY3LCJpYXQiOjE2OTg5NDI0NzR9.Ska7_6ybwGAFgY6fZcCnYEjr0FvB9HzlXoCb0-DpuX4
+
+{
+    "email": "elcositodelacosa2@gmail.com",
+    "usuario": "alcienporciento",
+    "contraseña": "YOtmbTENGOcositas123",
+    "cuit": 26323253654,
+    "razon_social": "Pitutos & Cía"
+}
+
+
+###MODIFICAR USUARIO Y CONTRASEÑA PROPIOS
+
+### Pido token de un usuario
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "elimaravillosa",
+    "contraseña": "TU3nvidiaAlimen7aMi3GO"
+}
+
+### CAMBIAR USUARIO Y/O CONTRASEÑA - lista para ejecutar
+PATCH http://localhost:1234/cuenta/usuarios
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEzLCJ1c2VyIjoiZWxzaXRhZGVzY2FsemEiLCJyb2wiOjIsImV4cCI6MTY5ODc5NjkwMjQ3OCwiaWF0IjoxNjk4NzkzMzAyfQ.ElmF6YwJYW2xTmn-7T4d0uZIM2qp5UO9CZ7xRtp353s
+
+{
+    "contraseñaActual": "TU3nvidiaAlimen7aMi3GO",
+    "nuevoUsuario": "eligrandiosa",
+    "nuevaContraseña": "UNIc4Yd3t3rgente"
+}
+
+### Pido token de un cliente
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "gutierrezernesto",
+    "contraseña": "gutierrez3rn3570"
+}
+
+### MODIFICAR DATOS CLIENTE (nivel 2) - lista para ejecutar
+PATCH http://localhost:1234/perfil/cliente
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsInVzZXIiOiJuYWNoaXRvY2FwbzIyIiwicm9sIjoyLCJleHAiOjE2OTg4MDg1MTU4MzMsImlhdCI6MTY5ODgwNDkxNX0.0fPHtlGT-rBneDgkNc8E1kmQp3njEWPRLVSWgKK6bEI
+
+{
+    "telefono": 5252335412,
+    "calle": "San Martín",
+    "numero": 219,
+    "localidadId": 10
+}
+
+
+### Pido token de un proveedor
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "allthenight",
+    "contraseña": "fullofELECTROLITO12"
+}
+
+### MODIFICAR DATOS PROVEEDOR (nivel 3) - lista para ejecutar
+PATCH http://localhost:1234/perfil/proveedor
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIyLCJ1c2VyIjoiaWx1bWluYW1lYmFieSIsInJvbCI6MywiZXhwIjoxNjk4ODA4ODA2NDM2LCJpYXQiOjE2OTg4MDUyMDZ9.w2816yKolnZB-xIgNVpR4NJObrA2-bnh0E0o7ScVo3Y
+
+{
+    "razon_social": "Baterías El Beto & Cía"
+}
+
+
+### Pido token de un administrador
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "escuerzo45",
+    "contraseña": "ELveneno35miPASION"
+}
+
+### MODIFICAR DATOS ADMINISTRADOR (nivel 1) - lista para ejecutar
+PATCH http://localhost:1234/perfil/administrador
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE5LCJ1c2VyIjoiZWxpbWFyYXZpbGxvc2EiLCJyb2wiOjEsImV4cCI6MTY5ODgwODk4NTg4MCwiaWF0IjoxNjk4ODA1Mzg1fQ.nav_keHfmP7TU_c5XZAY8dgHHFtSmqnyA2LDGtmGLfU
+
+{
+    "cuil": 26306485974
+}
+
+
+### BLOQUEO Y REACTIVACIÓN DE USUARIOS (niveles 1 y 4)
+
+### Pido token de administrador o superadministrador
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "elimaravillosa",
+    "contraseña": "TU3nvidiaAlimen7aMi3GO"
+}
+
+###Cambio el estado del usuario
+PATCH http://localhost:1234/estado/usuarios/13
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE3LCJ1c2VyIjoiZXNjdWVyem80NSIsInJvbCI6MSwiZXhwIjoxNjk4ODk0NjI0MzA5LCJpYXQiOjE2OTg4OTEwMjR9.0-Oc8hbIyWcOZXUqAWRVRkpe4iNbcdmElUTkOi0LUlE
+
+{
+    "activo": false
+}
+
+
+###PRODUCTOS
+
+###LISTADO DE PRODUCTOS
+GET http://localhost:1234/productos
+Content-Type: application/json
+
+
+###BUSCAR UN PRODUCTO POR ID
+GET http://localhost:1234/productos/7
+Content-Type: application/json
+
+
+###Pido token de un proveedor para cargar sus productos
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "iluminamebaby",
+    "contraseña": "100xcientoORIGINAL"
+}
+
+###AGREGAR PRODUCTOS (nivel 3) - (necesita token del proveedor específico de cada producto) - lista para ejecutar
+POST http://localhost:1234/proveedor/productos
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIyLCJ1c2VyIjoiaWx1bWluYW1lYmFieSIsInJvbCI6MywiZXhwIjoxNjk4OTQ2NDk0ODY2LCJpYXQiOjE2OTg5NDI4OTR9.tsbMEHzqBVF7lEiYktMUWxurBIovF394BW7Up69lwSA
+
+{
+    "url_imagen": "https://m.media-amazon.com/images/I/61spWi2h29L._SL1500_.jpg",
+    "nom_producto": "Artilugio",
+    "descripcion": "Sirve para medir algo, pero no sabemos qué",
+    "precio": 3200.40,
+    "stock": 6
+}
+
+
+### MODIFICAR PRODUCTOS (nivel 3) - (necesita token del proveedor específico de cada producto)
+PATCH http://localhost:1234/datos/productos/6
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIxLCJ1c2VyIjoiY2FibGVwZWxhZG83Iiwicm9sIjozLCJleHAiOjE2OTg4NzI0NzMzNzMsImlhdCI6MTY5ODg2ODg3M30.BQz3I1U3gbto-8aLgZX6WGjn-uVDqbrePxBaWnI8gn4
+
+{
+    "stock": 8
+}
+
+
+### DESACTIVAR/REACTIVAR UN PRODUCTO (niveles 1 y 4)
+PATCH http://localhost:1234/estado/productos/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE3LCJ1c2VyIjoiZXNjdWVyem80NSIsInJvbCI6MSwiZXhwIjoxNjk4OTAzMTQ5NTI4LCJpYXQiOjE2OTg4OTk1NDl9.FSaQUjZCSMRThuzmg_lf1UZEk4Rq576jnpheVNva4Dc
+
+{
+    "activo": false
+}
+
+###
+###
+###
+
+
+###CARRITO
+
+
+###Pido token de cliente
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "ineedadentistYA",
+    "contraseña": "MuelaEndemoniada2024"
+}
+
+
+###AGREGAR PRODUCTO AL CARRITO (nivel 2) - el estado 1 mantiene el carrito activo, el estado 2 simula la compra y lo cierra
+POST http://localhost:1234/cliente/venta
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXIiOiJpbmVlZGFkZW50aXN0WUEiLCJyb2wiOjIsImV4cCI6MTY5ODk1Mjc2NTM4NSwiaWF0IjoxNjk4OTQ5MTY1fQ.GD0iLcZqifQdvevXlCSI7Dt4Q_tY_EaxqksVphIAmds
+
+{
+    "estado": 1,
+    "productoId": 3,
+    "cantidad": 1
+}
+
+
+###MODIFICAR UNA VENTA EN EL CARRITO ACTIVO (nivel 2)
+PATCH  http://localhost:1234/cliente/carrito/modificarventa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXIiOiJpbmVlZGFkZW50aXN0WUEiLCJyb2wiOjIsImV4cCI6MTY5ODk1Mjc2NTM4NSwiaWF0IjoxNjk4OTQ5MTY1fQ.GD0iLcZqifQdvevXlCSI7Dt4Q_tY_EaxqksVphIAmds
+
+{
+    "productoId": 9,
+    "nuevaCantidad": 2
+}
+
+###ELIMINAR UNA VENTA EN EL CARRITO ACTIVO (nivel 2)
+PATCH  http://localhost:1234/cliente/carrito/eliminarventa
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXIiOiJpbmVlZGFkZW50aXN0WUEiLCJyb2wiOjIsImV4cCI6MTY5ODk1Mjc2NTM4NSwiaWF0IjoxNjk4OTQ5MTY1fQ.GD0iLcZqifQdvevXlCSI7Dt4Q_tY_EaxqksVphIAmds
+
+{
+    "productoId": 3
+}
+
+
+###ELIMINAR CARRITO ACTIVO (nivel 2)
+DELETE  http://localhost:1234/cliente/carrito/eliminarcarrito
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXIiOiJpbmVlZGFkZW50aXN0WUEiLCJyb2wiOjIsImV4cCI6MTY5ODk1Mjc2NTM4NSwiaWF0IjoxNjk4OTQ5MTY1fQ.GD0iLcZqifQdvevXlCSI7Dt4Q_tY_EaxqksVphIAmds
+
+
+###Pido token de cliente
+POST http://localhost:1234/auth
+Content-Type: application/json
+
+{
+    "usuario": "namaste429",
+    "contraseña": "coloRESyfloRES1234"
+}
+
+
+###HISTORIAL DE COMPRAS (nivel 2)
+GET http://localhost:1234/cliente/miscompras
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJuYW1hc3RlNDI5Iiwicm9sIjoyLCJleHAiOjE2OTg5NTMwNjM5NzMsImlhdCI6MTY5ODk0OTQ2M30.shHrOS3fzMimCUX-wex-S4lXWY5pl_tZvfy2zRB-T8E
+
+
+###VER CARRITO ACTIVO (nivel 2)
+GET http://localhost:1234/cliente/carrito
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInVzZXIiOiJpbmVlZGFkZW50aXN0WUEiLCJyb2wiOjIsImV4cCI6MTY5ODk1Mjc2NTM4NSwiaWF0IjoxNjk4OTQ5MTY1fQ.GD0iLcZqifQdvevXlCSI7Dt4Q_tY_EaxqksVphIAmds
+
+###
+###
+###
+
+
+
+
+
+
+
+
+
+
+
+
