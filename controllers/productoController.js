@@ -169,7 +169,7 @@ export async function updateProductById(req, res) {
 	}
 }
 
-//Desactivar producto, requiere token (nivel 1)
+//Deshabilitar o habilitar producto, requiere token (nivel 1)
 //'/estado/productos/:id'
 export async function stateProductById(req, res) {
 	try {

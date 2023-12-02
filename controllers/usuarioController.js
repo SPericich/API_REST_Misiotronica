@@ -393,6 +393,19 @@ export async function addUserClient(req, res) {
 	} = req.body;
 
 	try {
+        const emailexistente = await Usuario.findOne({where: {email : email }})
+       
+        if (emailexistente) {
+            res.status(409).json({
+                mensaje: "Ya existe un usuario con la dirección de correo proporcionada",
+        })}
+        
+        const userexistente = await Usuario.findOne({where: {usuario:usuario}})
+        if (userexistente) {
+            res.status(409).json({
+                mensaje: "El nombre de usuario ya está en uso",
+        })}
+  
 		const nuevoUsuario = await Usuario.create({
 			rolCod: 2,
 			email,
@@ -432,6 +445,21 @@ export async function addUserAdmin(req, res) {
 				.status(403)
 				.json({ message: "Acceso prohibido para este nivel de usuario" });
 		}
+
+        const emailexistente = await Usuario.findOne({where: {email : email }})
+       
+        if (emailexistente) {
+            res.status(409).json({
+                mensaje: "Ya existe un usuario con la dirección de correo proporcionada",
+        })}
+        
+        const userexistente = await Usuario.findOne({where: {usuario:usuario}})
+        if (userexistente) {
+            res.status(409).json({
+                mensaje: "El nombre de usuario ya está en uso",
+        })}
+  
+
 		const nuevoUsuario = await Usuario.create({
 			rolCod: 1,
 			email,
@@ -464,6 +492,19 @@ export async function addUserProvider(req, res) {
 				.status(403)
 				.json({ message: "Acceso prohibido para este nivel de usuario" });
 		}
+
+        const emailexistente = await Usuario.findOne({where: {email : email }})
+       
+        if (emailexistente) {
+            res.status(409).json({
+                mensaje: "Ya existe un usuario con la dirección de correo proporcionada",
+        })}
+        
+        const userexistente = await Usuario.findOne({where: {usuario:usuario}})
+        if (userexistente) {
+            res.status(409).json({
+                mensaje: "El nombre de usuario ya está en uso",
+        })}
 
 		const nuevoUsuario = await Usuario.create({
 			rolCod: 3,
@@ -498,7 +539,13 @@ export async function updateProfileUser(req, res) {
 		if (contraseñaActual !== user.contraseña) {
 			return res.status(403).json({ mensaje: "Contraseña incorrecta" });
 		}
-
+        
+        const userexistente = await Usuario.findOne({where: {usuario:nuevoUsuario}})
+        if (userexistente) {
+            res.status(409).json({
+                mensaje: "El nombre de usuario ya está en uso",
+        })}
+  
 		let datosActualizados = {};
 		if (nuevoUsuario) datosActualizados.usuario = nuevoUsuario;
 		if (nuevaContraseña) datosActualizados.contraseña = nuevaContraseña;
